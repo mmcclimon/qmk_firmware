@@ -108,16 +108,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |      |cmd x |      |      |      |------|           |------| left | down |  up  |right |      |  Play  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |vim b |      |           | play |      |      |      |      |      |        |
+ * |        |      |      |      |      |vim b |      |           | play | mute |voldn |volup |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      | Lclk | Rclk |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       | prev | next |
  *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |volup |      |      |
+ *                                 |      |      |      |       |      |      |      |
  *                                 |      |      |------|       |------|      |      |
- *                                 |      |      |      |       |voldn |      |      |
+ *                                 |      |      |      |       |      |      |      |
  *                                 `--------------------'       `--------------------'
  */
 [MDIA] = LAYOUT_ergodox(
@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS , KC_TRNS    , KC_TRNS , KC_TRNS , KC_TRNS  , KC_TRNS    , RESET   ,
   KC_TRNS , LGUI(KC_C) , KC_TRNS , KC_TRNS , KC_TRNS  , LGUI(KC_V) , KC_TRNS ,
             KC_LEFT    , KC_DOWN , KC_UP   , KC_RIGHT , KC_TRNS    , KC_MPLY ,
-  KC_MPLY , KC_TRNS    , KC_TRNS , KC_TRNS , KC_TRNS  , KC_TRNS    , KC_TRNS ,
+  KC_MPLY , KC_MUTE    , KC_VOLD , KC_VOLU , KC_TRNS  , KC_TRNS    , KC_TRNS ,
                          KC_TRNS , KC_TRNS , KC_TRNS  , KC_TRNS    , KC_AUDIO_MUTE ,
   KC_MPRV , KC_MNXT    ,
   KC_VOLU ,
