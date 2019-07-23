@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
-#include "config.h"
 
 #define BASE 0 // default layer
 #define SYMB 1 // symbols

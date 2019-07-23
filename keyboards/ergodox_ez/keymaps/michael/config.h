@@ -4,10 +4,15 @@
 */
 #pragma once
 
+/* buncha shenanigans for dual-use keys */
 #undef TAPPING_TERM
 #define TAPPING_TERM 165
 
+#undef IGNORE_MOD_TAP_INTERRUPT
 #define PERMISSIVE_HOLD
 
-#undef IGNORE_MOD_TAP_INTERRUPT
+/* online configurator sets this to 15, and cli default is 5. I like the old
+ * better.
+ */
+#define DEBOUNCE 15
 
