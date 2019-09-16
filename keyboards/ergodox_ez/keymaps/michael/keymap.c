@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * | TT(2)  |   1  |   2  |   3  |   4  |   5  | CS[  |           | CS]  |   6  |   7  |   8  |   9  |   0  |   -    |
+ * |        |   1  |   2  |   3  |   4  |   5  | CS[  |           | CS]  |   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  |  `   |           | Ctrl |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |Grv/L1|  '"  | Ctrl | Opt  | Cmd  |                                       |  Up  | Down |   [  |   ]  | ^A   |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
- *                                        |      | ^A   |       | Left | Right  |
+ *                                        | TT(2)| ^A   |       | Left | Right  |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Del  |       |      |        |      |
  *                                 | Bksp | LT 1 |------|       |------| Enter  | Spc  |
@@ -36,13 +36,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox(
   // lh
-  TT(2)             , KC_1        , KC_2          , KC_3          , KC_4          , KC_5 , LCMD(S(KC_LBRACKET)) ,
+  KC_TRNS           , KC_1        , KC_2          , KC_3          , KC_4          , KC_5 , LCMD(S(KC_LBRACKET)) ,
   KC_TAB            , KC_Q        , KC_W          , KC_E          , KC_R          , KC_T , KC_GRAVE ,
   LCTL_T(KC_ESCAPE) , KC_A        , KC_S          , KC_D          , KC_F          , KC_G ,
   KC_LSHIFT         , LT(1, KC_Z) , KC_X          , KC_C          , KC_V          , KC_B , KC_TAB   ,
   KC_GRAVE          , KC_QUOTE    , OSM(MOD_LCTL) , OSM(MOD_LALT) , OSM(MOD_LGUI) ,
 
-                                                             KC_TRNS,    LCTL(KC_A),
+                                                               TT(2),    LCTL(KC_A),
                                                                           KC_DELETE,
                                                   KC_BSPACE,  OSL(1), OSM(MOD_LGUI),
 
