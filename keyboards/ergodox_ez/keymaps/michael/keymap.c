@@ -8,7 +8,8 @@
 enum custom_keycodes {
   EPRM = SAFE_RANGE,
   VRSN,
-  RGB_SLD
+  RGB_SLD,
+  PLUS_ONE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -102,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Vim-like + media
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |        |  +1  |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |      |vim w |vim e |      |      |      |           |      |vim  y|      |      |      |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -122,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [MDIA] = LAYOUT_ergodox(
   // lh
-  KC_TRNS , KC_TRNS , KC_TRNS        , KC_TRNS        , KC_TRNS    , KC_TRNS       , KC_TRNS ,
+  KC_TRNS , PLUS_ONE, KC_TRNS        , KC_TRNS        , KC_TRNS    , KC_TRNS       , KC_TRNS ,
   KC_TRNS , KC_TRNS , LALT(KC_RIGHT) , LALT(KC_RIGHT) , KC_TRNS    , KC_TRNS       , KC_TRNS ,
   KC_TRNS , KC_TRNS , KC_TRNS        , LGUI(KC_X)     , KC_TRNS    , KC_TRNS       ,
   KC_TRNS , KC_TRNS , KC_TRNS        , KC_TRNS        , KC_TRNS    , LALT(KC_LEFT) , KC_TRNS ,
@@ -151,6 +152,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
       case VRSN:
         SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+        return false;
+      case PLUS_ONE:
+        SEND_STRING(":+1:");
         return false;
       #ifdef RGBLIGHT_ENABLE
       case RGB_SLD:
