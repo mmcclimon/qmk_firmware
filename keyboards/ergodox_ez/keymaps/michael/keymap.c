@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |         |   !  |   @  |   #  |   $  |   %  |------|           |------|   {  |   -  |   }  |   >  |      |        |
  * |---------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |         |      |   ^  |   [  |   ]  |   ~  |      |           |      |   [  |   _  |   ]  |   .  |      |        |
+ * |         |   :  |   ^  |   [  |   ]  |   ~  |      |           |      |   [  |   _  |   ]  |   .  |   ?  |        |
  * `---------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | EPRM  |      |      |      |      |                                       |      |    . |   0  |   =  |      |
  *   `-----------------------------------'                                       `----------------------------------'
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESCAPE , KC_F1   , KC_F2   , KC_F3       , KC_F4   , KC_F5   , KC_TRNS ,
   KC_TRNS   , KC_CIRC , KC_AMPR , KC_ASTERISK , KC_PIPE , KC_TILD , KC_TRNS ,
   KC_TRNS   , KC_EXLM , KC_AT   , KC_HASH     , KC_DLR  , KC_PERC ,
-  KC_TRNS   , KC_TRNS , KC_CIRC , KC_LBRC     , KC_RBRC , KC_TILD , KC_NO   ,
+  KC_TRNS   , KC_COLN , KC_CIRC , KC_LBRC     , KC_RBRC , KC_TILD , KC_NO   ,
   KC_TRNS   , KC_TRNS , KC_TRNS , KC_TRNS     , KC_TRNS ,
                                                           KC_TRNS ,  KC_TRNS,
                                                                      KC_TRNS,
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS , KC_F6       , KC_F7    , KC_F8       , KC_F9   , KC_F10  , KC_F11  ,
   KC_TRNS , KC_LPRN     , KC_EQUAL , KC_RPRN     , KC_ASTR , KC_PLUS , KC_F12  ,
             KC_LCBR     , KC_MINUS , KC_RCBR     , KC_RABK , KC_TRNS , KC_TRNS ,
-  KC_TRNS , KC_LBRACKET , KC_UNDS  , KC_RBRACKET , KC_TRNS , KC_TRNS , KC_TRNS ,
+  KC_TRNS , KC_LBRACKET , KC_UNDS  , KC_RBRACKET , KC_TRNS , KC_QUES , KC_TRNS ,
   KC_TRNS , KC_DOT      , KC_0     , KC_EQUAL    , KC_TRNS ,
   KC_TRNS , KC_TRNS,
   KC_TRNS ,
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Vim-like + media
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |  +1  |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |        |  +1  |      |      |      |      |      |           |      |      |      |      |      |      |  RESET |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |      |vim w |vim e |      |      |      |           |      |vim  y|      |      |      |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
