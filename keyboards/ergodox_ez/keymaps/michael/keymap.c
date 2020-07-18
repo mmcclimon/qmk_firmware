@@ -5,6 +5,8 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
+#define HYPER (MOD_RGUI | MOD_RALT | MOD_RCTL)
+
 enum custom_keycodes {
   EPRM = SAFE_RANGE,
   VRSN,
@@ -55,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  KC_DOWN     , KC_UP       , KC_LBRACKET , KC_RBRACKET     , LCTL(KC_A) ,
   KC_LEFT       , KC_RIGHT ,
   KC_TRNS       ,
-  OSM(MOD_RGUI) , KC_ENTER , KC_SPACE
+  OSM(HYPER)    , KC_ENTER , KC_SPACE
 ),
 
 /* Keymap 1: Symbol Layer
