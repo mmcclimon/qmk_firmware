@@ -40,4 +40,5 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 
 ```
 make ergodox_ez:michael
+make preonic/rev3:michael
 ```
