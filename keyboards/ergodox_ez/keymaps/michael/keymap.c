@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  |  `   |           | Ctrl |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | C/ Esc |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  | ;/L2 |   '    |
+ * | C/ Esc |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |  '/L2  |
  * |--------+------+------+------+------+------| Tab  |           |  =   |------+------+------+------+------+--------|
  * | LShift | Z/L1 |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  | //L1 | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // rh
   RCMD(S(KC_RBRACKET)) , KC_6  , KC_7        , KC_8        , KC_9        , KC_0            , KC_MINUS   ,
   KC_RCTRL             , KC_Y  , KC_U        , KC_I        , KC_O        , KC_P            , KC_BSLASH  ,
-                         KC_H  , KC_J        , KC_K        , KC_L        , LT(2,KC_SCOLON) , KC_QUOTE   ,
+                         KC_H  , KC_J        , KC_K        , KC_L        , KC_SCOLON       , LT(2,KC_QUOTE) ,
   KC_EQUAL             , KC_N  , KC_M        , KC_COMMA    , KC_DOT      , LT(1,KC_SLASH)  , KC_RSHIFT  ,
                                  KC_DOWN     , KC_UP       , KC_LBRACKET , KC_RBRACKET     , LCTL(KC_A) ,
   KC_LEFT       , KC_RIGHT ,
