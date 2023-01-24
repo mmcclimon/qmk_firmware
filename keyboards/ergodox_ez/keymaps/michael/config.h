@@ -14,5 +14,6 @@
 /* online configurator sets this to 15, and cli default is 5. I like the old
  * better.
  */
-#define DEBOUNCE 20
+#undef DEBOUNCE
+#define DEBOUNCE 45
 
