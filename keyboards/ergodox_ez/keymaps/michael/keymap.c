@@ -1,9 +1,11 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-#define BASE 0 // default layer
-#define SYMB 1 // symbols
-#define MDIA 2 // media keys
+enum layers {
+    BASE,  // default layer
+    SYMB,  // symbols
+    MDIA,  // media keys
+};
 
 #define HYPER (MOD_RGUI | MOD_RALT | MOD_RCTL)
 
@@ -39,22 +41,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox(
   // lh
-  KC_TRNS           , KC_1        , KC_2          , KC_3          , KC_4          , KC_5 , LCMD(S(KC_LBRACKET)) ,
+  KC_TRNS           , KC_1        , KC_2          , KC_3          , KC_4          , KC_5 , LCMD(S(KC_LBRC)) ,
   KC_TAB            , KC_Q        , KC_W          , KC_E          , KC_R          , KC_T , KC_GRAVE ,
   LCTL_T(KC_ESCAPE) , KC_A        , KC_S          , KC_D          , KC_F          , KC_G ,
-  KC_LSHIFT         , LT(1, KC_Z) , KC_X          , KC_C          , KC_V          , KC_B , KC_TAB   ,
+  KC_LSFT           , LT(1, KC_Z) , KC_X          , KC_C          , KC_V          , KC_B , KC_TAB   ,
   KC_GRAVE          , KC_QUOTE    , OSM(MOD_LCTL) , OSM(MOD_LALT) , OSM(MOD_LGUI) ,
 
                                                                TT(2),    LCTL(KC_A),
                                                                           KC_DELETE,
-                                                  KC_BSPACE,  OSL(1), OSM(MOD_LGUI),
+                                                    KC_BSPC,  OSL(1), OSM(MOD_LGUI),
 
   // rh
-  RCMD(S(KC_RBRACKET)) , KC_6  , KC_7        , KC_8        , KC_9        , KC_0            , KC_MINUS   ,
-  KC_RCTRL             , KC_Y  , KC_U        , KC_I        , KC_O        , KC_P            , KC_BSLASH  ,
-                         KC_H  , KC_J        , KC_K        , KC_L        , KC_SCOLON       , LT(2,KC_QUOTE) ,
-  KC_EQUAL             , KC_N  , KC_M        , KC_COMMA    , KC_DOT      , LT(1,KC_SLASH)  , KC_RSHIFT  ,
-                                 KC_DOWN     , KC_UP       , KC_LBRACKET , KC_RBRACKET     , LCTL(KC_A) ,
+  RCMD(S(KC_RBRC))     , KC_6  , KC_7        , KC_8        , KC_9        , KC_0            , KC_MINUS   ,
+  KC_RCTL              , KC_Y  , KC_U        , KC_I        , KC_O        , KC_P            , KC_BSLS    ,
+                         KC_H  , KC_J        , KC_K        , KC_L        , KC_SCLN         , LT(2,KC_QUOTE) ,
+  KC_EQUAL             , KC_N  , KC_M        , KC_COMMA    , KC_DOT      , LT(1,KC_SLASH)  , KC_RSFT  ,
+                                 KC_DOWN     , KC_UP       , KC_LBRC     , KC_RBRC          , LCTL(KC_A) ,
   KC_LEFT       , KC_RIGHT ,
   KC_TRNS       ,
   OSM(HYPER)    , KC_ENTER , KC_SPACE
@@ -95,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS , KC_F6       , KC_F7    , KC_F8       , KC_F9   , KC_F10  , KC_F11  ,
   KC_TRNS , KC_LPRN     , KC_EQUAL , KC_RPRN     , KC_ASTR , KC_PLUS , KC_F12  ,
             KC_LCBR     , KC_MINUS , KC_RCBR     , KC_RABK , KC_TRNS , KC_TRNS ,
-  KC_TRNS , KC_LBRACKET , KC_UNDS  , KC_RBRACKET , KC_TRNS , KC_QUES , KC_TRNS ,
+  KC_TRNS , KC_LBRC     , KC_UNDS  , KC_RBRC     , KC_TRNS , KC_QUES , KC_TRNS ,
   KC_TRNS , KC_DOT      , KC_0     , KC_EQUAL    , KC_TRNS ,
   KC_TRNS , KC_TRNS,
   KC_TRNS ,
@@ -135,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                  KC_TRNS , KC_TRNS , KC_TRNS ,
 
   //rh
-  KC_TRNS , KC_TRNS    , KC_TRNS , KC_TRNS , KC_TRNS  , KC_TRNS    , RESET   ,
+  KC_TRNS , KC_TRNS    , KC_TRNS , KC_TRNS , KC_TRNS  , KC_TRNS    , QK_BOOT ,
   KC_TRNS , LGUI(KC_C) , KC_TRNS , KC_TRNS , KC_TRNS  , LGUI(KC_V) , KC_TRNS ,
             KC_LEFT    , KC_DOWN , KC_UP   , KC_RIGHT , KC_TRNS    , KC_MPLY ,
   KC_MPLY , KC_MUTE    , KC_VOLD , KC_VOLU , KC_TRNS  , KC_TRNS    , KC_TRNS ,
@@ -176,7 +178,7 @@ void matrix_init_user(void) {
 };
 
 // Runs whenever there is a layer state change.
-uint32_t layer_state_set_user(uint32_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {
   ergodox_board_led_off();
   ergodox_right_led_1_off();
   ergodox_right_led_2_off();
